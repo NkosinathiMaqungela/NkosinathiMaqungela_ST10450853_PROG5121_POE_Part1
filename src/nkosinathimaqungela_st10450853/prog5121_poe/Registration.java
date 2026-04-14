@@ -39,4 +39,13 @@ public class Registration {
         return hasCapital && hasNumber && hasSpecial;
     }
     
+     public boolean checkCellNumber() {
+        
+        if (cellNumber == null) return false;
+        return  cellNumber.length()
+                <= 12 && cellNumber.length() >= 10
+                && cellNumber.matches("^\\+27[6-8][0-9]{8}$");
+    }
+    
+    
 }
