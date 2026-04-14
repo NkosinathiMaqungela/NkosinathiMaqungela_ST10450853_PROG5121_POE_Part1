@@ -39,13 +39,69 @@ public class Registration {
         return hasCapital && hasNumber && hasSpecial;
     }
     
-     public boolean checkCellNumber() {
+    public boolean checkCellNumber() {
         
         if (cellNumber == null) return false;
         return  cellNumber.length()
                 <= 12 && cellNumber.length() >= 10
                 && cellNumber.matches("^\\+27[6-8][0-9]{8}$");
     }
+     
+    public String registerUser() {
+        boolean validUsername = checkUserName();
+        boolean validPassword = checkPasswordComplexity();
+        boolean validCellPhone = checkCellPhoneNumber();
+
+        StringBuilder message = new StringBuilder();
+        if (!validUsername) {
+            message.append("Username is not correctly formatted, please ensure"
+                    + " that your username contains an underscore and is no more"
+                    + " than five characters in length.\n");
+        } else {
+            message.append("Username successfully captured.\n");
+        }
+
+        if (!validPassword) {
+            message.append("Password is not correctly formatted; please ensure"
+                    + " that the password contains at least eight characters,"
+                    + " a capital letter, a number, and a special character.\n")
+                    ;
+        } else {
+            message.append("Password successfully captured.\n");
+        }
+
+        if (!validCellPhone) {
+            message.append("Cell phone number incorrectly formatted or does not"
+                    + " contain international code.\n");
+        } else {
+            message.append("Cell phone number successfully added.\n");
+        }
+
+        if (validUsername && validPassword && validCellPhone) {
+            storedUsername = username;
+            storedPassword = password;
+        }
+        
+         return message.toString().trim();
+       
+    }
+
+    public String getStoredUsername() {
+        return storedUsername;
+    }
+
+    public String getStoredPassword() {
+        return storedPassword;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+    
     
     
 }
