@@ -41,14 +41,8 @@ public class RegistrationTest {
      */
     @Test
     public void testCheckUserName() {
-        System.out.println("checkUserName");
-        Registration instance = null;
-        boolean expResult = false;
-        boolean result = instance.checkUserName();
-        assertEquals("Kyl_1", "Kyle!!!!");  
-        fail("Username is not correctly formatted, please ensure"
-             + " that your username contains an underscore and is no more"
-             + " than five characters in length.");
+        Registration s = Registration.checkUserName("Kyl_1");
+        assertEquals("username successfully captured")
     }
 
     /**
