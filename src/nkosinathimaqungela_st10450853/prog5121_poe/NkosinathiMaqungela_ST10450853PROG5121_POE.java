@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package nkosinathimaqungela_st10450853.prog5121_poe;
 
 /**
  *
- * @author maqun
+ * @author Nkosinathi Maqungela ST10450853
  */
 public class NkosinathiMaqungela_ST10450853PROG5121_POE {
 
