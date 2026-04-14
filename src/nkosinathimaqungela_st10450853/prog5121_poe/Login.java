@@ -21,6 +21,7 @@ public class Login {
         String storedUsername = registration.getStoredUsername();
         String storedPassword = registration.getStoredPassword();
 
+        //checks to see if the username and password
         if (storedUsername == null || storedPassword == null) {
             loginStatus = false;
             return false;
@@ -31,6 +32,7 @@ public class Login {
         return loginStatus;
     }
     
+    //display message for successfull login
     public String returnLoginStatus() {
         if (loginStatus) {
             return "Hello " + registration.getFirstName() + " " +
