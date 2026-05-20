@@ -165,7 +165,7 @@ public class NkosinathiMaqungela_ST10450853PROG5121_POE {
                     if (login.returnLoginStatus().contains("Hello")) {
                         loginSuccessful = true;
                         System.out.println("Welcome to the Chat App");
-                        displayMenu.showMenu();
+                        Messaging.textMenu();
                         
                     }
                 }
