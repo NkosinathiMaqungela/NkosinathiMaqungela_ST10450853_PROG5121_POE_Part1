@@ -22,10 +22,11 @@ public class Messaging {
        
     
     
-    private static class Message {
+    public static class Message {
         String id;
         String recipient;
         String content;
+        
         private String toLowerCase;
         
         public Message(String id, String recipient, String content){
@@ -40,11 +41,13 @@ public class Messaging {
         this.random = new Random();
     }
     
-    public void textMenu(){
+    public static void textMenu(){
         boolean quit = false;
+        Messaging messages = new Messaging(new Scanner(System.in));
+        Scanner scanner = new Scanner(System.in);
         
         while (!quit){
-            System.out.println("\nzMain Menu");
+            System.out.println("\nMain Menu");
             System.out.println("************************************");
             System.out.println("Please choose an option to continue");            
             System.out.println("1. Send Messages");            
@@ -52,9 +55,10 @@ public class Messaging {
             System.out.println("3. Quit");
             
             String option = scanner.nextLine();
+           
             
             switch (option){
-                case "1": handleSendMessages();
+                case "1": messages.handleSendMessages();
                             break;
                             
                 case "2": System.out.println("\n--- Sent Messages ---");
@@ -71,11 +75,12 @@ public class Messaging {
                             
                 default:
                     System.out.println("Invalid option. Please choose 1 or 3");
+                    break;
             }
         }
     }
     
-     void handleSendMessages(){
+     public void handleSendMessages(){
         System.out.println("How many messages would you like to send?");
         int numberOfMessages = 0;
         
