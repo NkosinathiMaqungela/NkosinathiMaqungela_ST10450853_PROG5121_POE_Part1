@@ -81,9 +81,14 @@ public class Messaging {
     }
     
      public void handleSendMessages(){
-        System.out.println("How many messages would you like to send?");
-        int numberOfMessages = 0;
+        String input;
+        int numberOfMessages;
+        String recipientNumber;
         
+        System.out.println("How many messages would you like to send?");
+        numberOfMessages = 0;
+        
+        //checks for number of messages the user wants to send
         try {
             numberOfMessages = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e){
@@ -92,13 +97,13 @@ public class Messaging {
         }
         
         for (int i = 1; i <= numberOfMessages; i++) {
-            String recipientNumber = null;
+            recipientNumber = null;
             
             // Keep prompting until a valid phone number is entered
             while (recipientNumber == null) {
                 System.out.print("Enter recipient cellphone number (Must start"
                         + " with +27 and be 10-12 digits)");
-                String input = scanner.nextLine().trim();
+                 input = scanner.nextLine().trim();
                 
                 if (recipientCellPhone.matcher(input).matches()) {
                     recipientNumber = input;
@@ -147,11 +152,6 @@ public class Messaging {
             System.out.println("Message stored. Message ID: " + StoredmessageId);
             }
             
-            String sentMessageId = generateIdNumber();{
-            System.out.println("Message " + i + " sent to " + recipientNumber +
-                    ": \"" + message + "\"");
-            System.out.println("Message stored. Message ID: " + sentMessageId);
-            }
         }
     }
     
